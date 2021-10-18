@@ -13,9 +13,7 @@ sliderNumber.textContent = sliderNumber.value;
 
 napraviGrid(defaultSize);
 
-let gridItems = document.querySelectorAll(".grid-item");
-gridItems.forEach((gridItem)=> gridItem.addEventListener("mouseover",()=>
-gridItem.style.background=color))
+ukljuciCrtanje();
 
 
 clearGrid.addEventListener("click",()=> ocistiPapir());
@@ -50,7 +48,7 @@ function promeniGrid(newSize){
     ocistiPapir();
     isprazniGrid();
     napraviGrid(newSize); 
-    crtanjeDefault();
+    ukljuciCrtanje();
     }
 
 
@@ -78,7 +76,7 @@ function ocistiPapir(){
 }
 
 
-function crtanjeDefault()
+function ukljuciCrtanje()
 {
     gridItems = document.querySelectorAll(".grid-item");
     gridItems.forEach((gridItem)=> gridItem.addEventListener("mouseover",()=>
