@@ -1,3 +1,15 @@
+@font-face
+{
+    font-family:SnellBTimport; 
+    src:url(cssFonts/SnellBT-Bold.otf),url(cssFonts/SnellBT-Regular.otf);
+
+}
+
+#main
+{
+    font-family:SnellBTimport;
+}
+
 html {
     box-sizing:border-box;
     
@@ -5,40 +17,69 @@ html {
 body{
     min-height:100vh;
     display:flex; 
-    flex-wrap:wrap;
+    flex-direction:column;
     align-items:center;
-    justify-content:center;
+    justify-content:space-between;
     background:rgb(29, 183, 235);
+    margin:0;
+    
 }
 
 .content{ 
-    display:flex;
-    flex:1;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
-    margin:auto;
-    background:blue;
-    gap:2em;
-    
+    display:grid;
+    grid-template-columns:repeat(6,1fr); 
+    grid-template-rows:repeat(7,95px);
+    grid-template-areas: "text text text velicinaGrida velicinaGrida velicinaGrida"
+    "text text text papir papir papir"
+    "text text text papir papir papir"
+    "text text text papir papir papir"
+    "text text text papir papir papir"
+    "izaberiBoju izaberiBoju izaberiBoju papir papir papir"
+     "izaberiBoju izaberiBoju izaberiBoju kontrole kontrole kontrole";
+    background-image:url(imgs/book.webp);
+    background-size:100%;
+    background-repeat:no-repeat;
+    min-width:1100px;
+    min-height:750px;
+    margin-top:2em;
 }
 
 .grid{ 
         display:grid;
-        background:white;
-        min-width: 500px;
-        min-height:500px;
-        max-width: 500px;
-        max-height:500px;
+        background:rgb(229, 226, 226);
+        min-width: 460px;
+        min-height:460px;
+        max-width: 460px;
+        max-height:460px;
         grid-template-columns:repeat(16,1fr);
         grid-template-rows:repeat(16,1fr);
- 
+        grid-area:papir;
+        border-radius:1px;
+        border:2px dashed brown;
+        margin-left:8px;
+        margin-bottom:3px;
+}
+
+.text
+{   display:flex;
+    flex-direction:column;
+    grid-area:text;
+    justify-content: center;
+    align-items: space-around;
+    font-family:SnellBTimport;
+    font-size:32px;
+    font-style:italic;
+    color:rgb(73, 8, 8);
+    margin-left:4em;
 
 }
-.buttons
+.controls
 {   
-    margin-top:1em;
+
     text-align:center;
+    grid-area:kontrole;
+    margin-right:3.9em;
+    margin-top:1em;
 }
 
 
@@ -47,15 +88,113 @@ body{
     display:flex; 
     justify-content:center;
     align-items:center;
-    border:0.5px solid gray;
+
 }
 
-.grid-item-black
+
+span
 {
-    background:black;
+    font-size:90px;
+    font-family:SnellBTimport;
+    text-align:center;
 }
 
-.eraser 
+.title
 {
-    background:white;
+    font-size:60px;
+    font-weight:bold;
+    margin-bottom:2em;
 }
+
+h1
+{
+    margin:0;
+    font-size:90px;
+}
+
+button{
+
+        font-size: 22px;
+        line-height: 14px;
+        border: 2px solid rgb(73, 8, 8);
+        border-radius: 20px;
+        padding: 7px;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: rgb(73, 8, 8);
+        font-family:SnellBTimport;
+        margin-right:8px;
+
+}
+
+button:hover {
+  
+    border-color: rgb(29, 183, 235);
+}
+
+.velicinaGrida
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:23px;
+    align-items:center;
+    grid-area:velicinaGrida; 
+    font-family:SnellBTimport;
+    font-size:2em;
+    color: rgb(73, 8, 8);
+    margin-right:2em;
+    
+}
+
+.favColor
+{
+    grid-area:izaberiBoju;
+    font-family:SnellBTimport;
+    font-size:2em;
+    color: rgb(73, 8, 8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:16px;
+    margin-left:2.5em;
+}
+
+footer{
+    min-height:60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-self:stretch;
+    background:rgb(229, 226, 226);
+    color:rgb(73, 8, 8);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: rgb(229, 226, 226);
+    border:1px solid rgb(73, 8, 8);
+    width: 150px;
+    height:8px;
+    border-radius:5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: rgb(73, 8, 8);
+    opacity: 1;
+    width: 10px;
+    height: 12px;
+    border-radius:3px;
+}
+input[type=range]::-moz-range-thumb {
+
+    
+    border: 1px solid #000000;
+    height: 10px;
+    width: 12px;
+    border-radius: 3px;
+     background: rgb(73, 8, 8);
+    cursor: pointer;
+  }
+  
