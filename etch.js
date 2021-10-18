@@ -32,13 +32,7 @@ function napraviGrid(size){
     gridItem.classList.add("grid-item");
 
     grid.appendChild(gridItem); }}
-
-function deleteDivs()
-    {
-      for(i=0; i<size*size; i++){
-          grid.removeChild(gridItem);
-      }  
-    }
+    
 
 function promeniGrid(newSize){ 
   
